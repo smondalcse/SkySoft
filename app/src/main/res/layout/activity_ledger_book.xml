@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/cordinatorLayout"
+    android:orientation="vertical"
+    android:background="@color/colorend"
+    tools:context=".activity.LedgerBookActivity">
+
+    <include layout="@layout/toolbar_layout" />
+
+    <android.support.v7.widget.CardView
+        android:layout_margin="5dp"
+        android:backgroundTint="@color/color_search"
+        android:layout_width="match_parent"
+        android:layout_height="170dp">
+
+        <LinearLayout
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="244dp"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_marginTop="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="36dp" >
+
+                <TextView
+                    android:id="@+id/txt_empnumber"
+                    android:textSize="@dimen/medium_text"
+                    android:textColor="@color/colorBlack"
+                    android:text="Acc Name"
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content" />
+
+                <EditText
+                    android:paddingLeft="5dp"
+                    android:layout_marginTop="1dp"
+                    android:layout_marginBottom="1dp"
+                    android:id="@+id/et_emp_number"
+                    android:layout_marginLeft="5dp"
+                    android:textSize="@dimen/medium_text"
+                    android:hint="Enter Acc"
+                    android:layout_marginRight="5dp"
+                    android:background="@drawable/border_radious"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="3">
+                </EditText>
+
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_marginTop="2dp"
+                android:layout_width="match_parent"
+                android:layout_height="36dp" >
+
+                <LinearLayout
+                    android:gravity="center"
+                    android:layout_marginRight="50dp"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:text="From Date"
+                        android:textColor="@color/colorBlack"
+                        android:textSize="@dimen/medium_text"
+                        android:layout_width="120dp"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:textColor="@color/colorBlack"
+                        android:id="@+id/txtStartTime"
+                        android:textSize="@dimen/medium_text"
+                        android:text=""
+                        android:layout_marginLeft="5dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp">
+                    </TextView>
+
+                </LinearLayout>
+
+                <ImageButton
+                    android:id="@+id/btn_starttime"
+                    android:layout_alignParentRight="true"
+                    android:background="@drawable/circlebgred"
+                    android:src="@drawable/ic_calendar"
+                    android:layout_width="38dp"
+                    android:layout_height="match_parent" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_marginTop="4dp"
+                android:layout_width="match_parent"
+                android:layout_height="36dp" >
+
+                <LinearLayout
+                    android:gravity="center"
+                    android:layout_marginRight="50dp"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:text="To Date"
+                        android:textColor="@color/colorBlack"
+                        android:textSize="@dimen/medium_text"
+                        android:layout_width="120dp"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:textColor="@color/colorBlack"
+                        android:id="@+id/txtEndTime"
+                        android:textSize="@dimen/medium_text"
+                        android:text=""
+                        android:layout_marginLeft="5dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp">
+                    </TextView>
+
+                </LinearLayout>
+
+                <ImageButton
+                    android:id="@+id/btn_endtime"
+                    android:layout_alignParentRight="true"
+                    android:background="@drawable/circlebgred"
+                    android:src="@drawable/ic_calendar"
+                    android:layout_width="38dp"
+                    android:layout_height="match_parent"  />
+
+            </RelativeLayout>
+
+            <Button
+                android:id="@+id/btn_search"
+                android:foreground="?android:selectableItemBackground"
+                android:layout_marginTop="5dp"
+                android:textColor="@color/colorWhite"
+                android:textSize="@dimen/medium_text"
+                android:textAllCaps="false"
+                android:text="Search"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:background="@drawable/border_red">
+            </Button>
+
+        </LinearLayout>
+
+    </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.CardView
+        android:layout_marginRight="5dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginBottom="5dp"
+        android:backgroundTint="@color/cardview_light_background"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/txt_calllog_empty"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:drawablePadding="5dp"
+            android:gravity="center"
+            android:text="No Result Found."
+            android:textColor="@android:color/black"
+            android:visibility="gone" />
+
+        <ListView
+            android:layout_marginTop="2dp"
+            android:id="@+id/lv_callhistory"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:divider="@null"
+            android:dividerHeight="0dp"
+            />
+    </android.support.v7.widget.CardView>
+
+
+</LinearLayout>
